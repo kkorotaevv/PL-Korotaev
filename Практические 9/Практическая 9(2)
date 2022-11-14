@@ -1,0 +1,34 @@
+with open('C:\\Users\\KiRiLL\\Desktop\\Коротаев Кирилл Романович_УБ-23_vvod.txt') as f:
+    line = f.readlines()
+matrix = [element.replace("\n", "").split() for element in line]
+file = open('C:\\Users\\KiRiLL\\Desktop\\Коротаев Кирилл Романович_УБ-23_vivod1.txt', 'w')
+print(file.write('ВАРИАНТ 2\n'))
+print(file.write('ЗАДАНИЕ 1\n'))
+n = len(matrix)
+m = len(matrix[0])
+A = matrix
+for i in range(n):
+    for j in range(m):
+        print(int(A[i][j]), end=" ")
+    print()
+if ((A[0][0] + A[0][1] + A[0][2]) == (A[1][0] + A[1][1] + A[1][2])) and ((A[1][0] + A[1][1] + A[1][2]) == (A[2][0] + A[2][1] + A[2][2])):
+    print(file.write('Матрица магическая\n'))
+else:
+    print(file.write('Матрица не магическая\n'))
+
+print(file.write('ЗАДАНИЕ 2\n'))
+a = A[0][0]
+A[0][0] = A[0][2]
+A[0][2] = a
+a = A[1][0]
+A[1][0] = A[1][2]
+A[1][2] = a
+a = A[2][0]
+A[2][0] = A[2][2]
+A[2][2] = a
+print(file.write('Изменённый массив\n'))
+for i in range(n):
+    for j in range(n):
+        print(file.write(A[i][j] + ' '))
+    print(file.write('\n'))
+file.close()
