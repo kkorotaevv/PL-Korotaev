@@ -1,0 +1,62 @@
+f = open('C:\\Users\\KiRiLL\\Desktop\\Коротаев Кирилл Романович_УБ-23_vvod.txt')
+file = open('C:\\Users\\KiRiLL\\Desktop\\Коротаев Кирилл Романович_УБ-23_vivod.txt', 'w')
+print(file.write('ВАРИАНТ 13\n'))
+print(file.write('ЗАДАНИЕ 1\n'))
+min = 99999999999
+A = []
+for line in f:
+    s = line
+    l = list(map(int, s.split()))
+    A.append(l)
+n = len(A)
+m = len(A)
+print('Исходный массив\n')
+for i in range(n):
+    for j in range(m):
+        print(int(A[i][j]), end=" ")
+    print()
+for i in range(n):
+    if min > (int(A[0][i])):
+        min = A[0][i]
+print(file.write('Минимальное число из 1 строки - '))
+print(file.write(str(min) + '\n'))
+min = 999999
+for i in range(n):
+    if min > A[1][i]:
+        min = A[1][i]
+print(file.write('Минимальное число из 2 строки - '))
+print(file.write(str(min) + '\n'))
+min = 999999
+for i in range(n):
+    if min > A[2][i]:
+        min = A[2][i]
+print(file.write('Минимальное число из 3 строки - '))
+print(file.write(str(min) + '\n'))
+print(file.write('ЗАДАНИЕ 2\n'))
+print(file.write('Начальный массив\n'))
+minimum = [0, 0, 9999999]
+maximum = [0, 0, -9999999]
+
+for i in range(len(A)):
+    for j in range(len(A)):
+        if A[i][j] > maximum[2]:
+            maximum[0] = i
+            maximum[1] = j
+            maximum[2] = A[i][j]
+
+for i in range(len(A)):
+    for j in range(len(A)):
+        if A[i][j] < minimum[2]:
+            minimum[0] = i
+            minimum[1] = j
+            minimum[2] = A[i][j]
+
+A[maximum[0]][maximum[1]] = minimum[2]
+A[minimum[0]][minimum[1]] = maximum[2]
+
+print(file.write('Изменённый массив\n'))
+for i in range(n):
+    for j in range(n):
+        print(file.write(str(A[i][j]) + ' '))
+    print(file.write('\n'))
+file.close()
