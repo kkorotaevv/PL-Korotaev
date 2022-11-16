@@ -38,7 +38,7 @@ def knopka():
 
 window = Tk()
 window.title("Коротаев Кирилл Романович")
-window.geometry('590x250')
+window.geometry('800x400')
 
 tab_control = ttk.Notebook(window)
 tab1 = ttk.Frame(tab_control)
@@ -57,7 +57,7 @@ lbl2.grid(column=2, row=0)
 lbl_gl = Label(tab1)
 lbl_gl.grid(column=4, row=0)
 
-txt = scrolledtext.ScrolledText(tab3, height=14, width=70)
+txt = scrolledtext.ScrolledText(tab3, height=30, width=97)
 txt.grid(column=0, row=0)
 
 combo = Combobox(tab1)
@@ -76,7 +76,7 @@ chk3.grid(column=0, row=2)
 
 btn = Button(tab2, text="Нажми", command=knopka)
 btn.grid(column=1, row=1)
-btn1 = Button(tab1, text="Посчитать", command=kalkulator())
+btn1 = Button(tab1, text="=", command=kalkulator)
 btn1.grid(column=3, row=0)
 
 menu = Menu(window)
