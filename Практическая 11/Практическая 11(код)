@@ -47,8 +47,7 @@ def click():
         url = json['url']
     except:
         url = 'None'
-    file('/home/zloy/Рабочий стол/Progromice/Учёба/Практические работы  (Языки программирования)/11rabota.txt',
-         f"'company': {company}\n'created_at': {created_at}\n'email':{email}\n'id':{id}\n'name':{name}\n'url':{url}")
+    file('C:\\Users\\KiRiLL\\Desktop\\Практическая 11.txt', f"'company': {company}\n'created_at': {created_at}\n'email':{email}\n'id':{id}\n'name':{name}\n'url':{url}")
 
 
 btn = Button(window, text='Click', fg='black', bg='white', command=click)
