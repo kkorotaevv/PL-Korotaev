@@ -11,8 +11,10 @@ x = int(input('Введите число x - '))
 n = int(input('Введите число n - '))
 print(fuct(x, n))
 print('БЛОК Б')
-print('ЗАДАНИЕ 3')
-def f():
-    s = [int(i) for i in input('Введите данные: ').split()]
-    print(*s[::2])
-f()
+print('ЗАДАНИЕ 1')
+def str():
+    a = int(input())
+    if a == 0:
+        return 1
+    return max(a, str())
+print(str())
