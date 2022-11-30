@@ -13,6 +13,6 @@ print(fuct(x, n))
 print('БЛОК Б')
 print('ЗАДАНИЕ 3')
 def f():
-    s = [int(i) for i in input('Введите данные: ').split() if int(i)]
+    s = [int(i) for i in input('Введите данные: ').split()]
     print(*s[::2])
 f()
